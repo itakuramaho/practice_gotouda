@@ -1,0 +1,50 @@
+{
+  "scripts": {
+    "predev": "del-cli dist/*",
+    "dev": "npm-run-all -p watch/*",
+    "build": "npm-run-all -p build/*",
+    "format": "eslint src --fix && prettier --write src && prettier --parser html --write src/views/**/*.ejs",
+    "watch/public": "chokidar \"public/**/*\" -c \"webpack --config webpack.config.development.js\" --initial",
+    "watch/webpack": "webpack --config webpack.config.development.js -w",
+    "watch/sass": "sass --watch src/styles/style.scss dist/assets/css/style.css",
+    "watch/server": "php -S 127.0.0.1:8080 -t ./dist",
+    "watch/browser-sync": "browser-sync start --proxy 127.0.0.1:8080 --files=dist/*.html, dist/assets/css/*.css, dist/assets/js/*.js",
+    "prebuild": "del-cli build/*",
+    "build/ejs": "ejs-cli --base-dir src/views/pages **/*.ejs --out build",
+    "build/webpack": "webpack --config webpack.config.production.js",
+    "build/sass": "sass src/styles/style.scss build/assets/css/style.css"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@squoosh/lib": "^0.5.3",
+    "babel-loader": "^8.4.1",
+    "browser-sync": "^2.27.10",
+    "chokidar-cli": "^3.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "del-cli": "^5.0.0",
+    "ejs-cli": "^2.2.3",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "image-minimizer-webpack-plugin": "^3.8.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.3",
+    "sass": "^1.52.3",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.5.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.1"
+  },
+  "volta": {
+    "node": "17.9.1"
+  }
+}

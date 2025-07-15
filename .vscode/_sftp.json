@@ -1,0 +1,23 @@
+{
+  "name": "Test Server",
+  "host": "sv10663.xserver.jp",
+  "protocol": "ftp",
+  "port": 21,
+  "username": "inselart@dm0001.xsrv.jp",
+  "password": "HD5VH66QXKM4XF",
+  "remotePath": "/dm-test-server01.com/public_html/●●/",
+  "context": "./dist/",
+  "uploadOnSave": false,
+  "ignore": [
+    ".vscode",
+    ".git",
+    ".gitignore",
+    "node_modules",
+    ".DS_Store",
+    "src",
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "webpack.config.js"
+  ]
+}

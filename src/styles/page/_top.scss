@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+@use '../lib/global' as g;
+
+/*----------------------------------------------------
+
+	各ページの独自モジュールスタイルのCSS。
+
+	【記述ルール】
+	{ ページ名(top, about等) }○○○○
+
+	階層はルートクラスより、三階層までが基本
+	【例】
+	.top-sec .top-sec__ttl span {
+	}
+	※CSSに展開した場合
+
+----------------------------------------------------*/
+
+
+//about
+.about {
+	letter-spacing: .15em;
+
+	&__inner {
+		display: flex;
+		flex-direction: row-reverse;
+		margin: 0 15vw;
+	}
+
+	&__wrap {
+		margin-bottom: 10rem;
+	}
+
+	&__txt {
+		font-size: 1.7rem;
+		font-weight: 400;
+		margin-top: 4rem;
+		line-height: 2.5;
+	}
+
+	&__swiper {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+//servise
+.servise {
+
+	&__wrap {
+		display: flex;
+		gap: 3%;
+	}
+
+	&__left {
+		margin: 8.5rem 0 0 8.5rem;
+		width: 100%;
+	}
+
+	&__right {
+		width: 100%;
+
+
+		&-01 {
+			display: flex;
+			gap: 5%;
+			margin-bottom: 8.5rem;
+		}
+	}
+
+	&__ttl {
+		font-size: 3.4rem;
+		line-height: 1.3;
+	}
+
+	&__min {
+		font-size: 1.6rem;
+		margin-top: 0.4rem;
+	}
+
+	&__sub {
+		font-size: 1.3rem;
+		margin-top: 10px;
+	}
+
+	&__txt {
+		font-size: 1.6rem;
+		margin-top: 3.2rem;
+	}
+
+	&__img {
+		display: flex;
+		gap: 15%;
+		padding-bottom: 5rem;
+
+		&-right {
+			margin-top: 20rem;
+		}
+	}
+}
+
+//news
+
+.news {
+
+	&__wrap {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 6rem;
+	}
+
+	&__cont {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		gap: 5%;
+		align-items: center;
+		width: 70%;
+		margin-bottom: 6rem;
+
+		&::after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 1px;
+			background-color: #000;
+			bottom: -3rem;
+			left: 1rem;
+		}
+
+		img {
+			width: 15px;
+			height: 8px;
+		}
+	}
+
+	&__date {
+		font-size: 1.6rem;
+		font-weight: 500;
+	}
+}
+
+//recruit
+
+.recruit {
+	&__wrap {
+		background-color: #4F9FF8;
+		width: 100%;
+	}
+}

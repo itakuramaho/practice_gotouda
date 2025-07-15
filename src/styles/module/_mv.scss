@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+@use '../lib/global' as g;
+
+
+//mv
+.mv {
+  margin: 0;
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__ttl {
+    position: absolute;
+    left: 5rem;
+    bottom: 7.5rem;
+    font-size: 5vw;
+    line-height: 1.3;
+    font-weight: 400;
+
+    &-01 {
+      width: 80%;
+      letter-spacing: 0.15em;
+    }
+
+    &-sub {
+      font-size: 1.5vw;
+      margin-top: 4rem;
+      letter-spacing: 0.1em;
+    }
+  }
+}
